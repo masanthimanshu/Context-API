@@ -1,4 +1,4 @@
-import UpdateContext from "../../context/updateContext";
+import { UpdateContext } from "../../context";
 
 export default function Login() {
   const update = UpdateContext();
