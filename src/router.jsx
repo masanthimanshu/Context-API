@@ -9,14 +9,12 @@ export default function Router() {
 
   return (
     <Routes>
-      <Route index element={<Redirect />} />
-      <Route path="/login" element={<Login />} />
+      <Route index element={auth ? <Home /> : <Login />} />
+
+      {/* Protected Routes */}
       <Route path="/">
         {auth ? (
-          <>
-            <Route path="home" element={<Home />} />
-            <Route path="profile" element={<Profile />} />
-          </>
+          <Route path="profile" element={<Profile />} />
         ) : (
           <Route path="*" element={<Redirect />} />
         )}

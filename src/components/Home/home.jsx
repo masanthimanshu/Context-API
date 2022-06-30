@@ -8,14 +8,10 @@ export default function Home() {
   return (
     <>
       <h1>Home is working</h1>
-      <Link to="/profile">
-        <button>Go to profile</button>
-      </Link>
+      <Link to="/profile">Go to profile</Link>
       <br />
       <br />
-      <Link to="/login">
-        <button onClick={() => update()}>Log Out</button>
-      </Link>
+      <button onClick={() => update()}>Log Out</button>
     </>
   );
 }
