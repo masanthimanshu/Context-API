@@ -1,11 +1,10 @@
-import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { Context } from "./context/createContext";
+import { ReadContext } from "./context";
 import { Redirect, Login, Home, Profile } from "./components";
 
 export default function Router() {
-  const { auth } = useContext(Context);
+  const { auth } = ReadContext();
 
   return (
     <Routes>
