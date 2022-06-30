@@ -2,10 +2,7 @@ import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { Context } from "./context/context";
-import Redirect from "./components/Redirect/redirect";
-import Login from "./components/Login/login";
-import Home from "./components/Home/home";
-import Profile from "./components/Profile/profile";
+import { Redirect, Login, Home, Profile } from "./components";
 
 export default function Router() {
   const { auth } = useContext(Context);
