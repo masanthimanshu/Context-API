@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Route, Routes } from "react-router-dom";
 
-import { Context } from "./context/context";
+import { Context } from "./context/createContext";
 import { Redirect, Login, Home, Profile } from "./components";
 
 export default function Router() {

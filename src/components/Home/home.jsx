@@ -1,9 +1,8 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { Context } from "../../context/context";
+import UpdateContext from "../../context/updateContext";
 
 export default function Home() {
-  const { update } = useContext(Context);
+  const Update = UpdateContext();
 
   return (
     <>
@@ -11,7 +10,7 @@ export default function Home() {
       <Link to="/profile">Go to profile</Link>
       <br />
       <br />
-      <button onClick={() => update()}>Log Out</button>
+      <button onClick={() => Update.updateAuth()}>Log Out</button>
     </>
   );
 }

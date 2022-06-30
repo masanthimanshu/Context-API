@@ -8,5 +8,5 @@ export default function Redirect() {
     navigate("/");
   }, []);
 
-  return <></>;
+  return;
 }
