@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { ReadContext } from "./context";
@@ -5,6 +6,13 @@ import { Redirect, Login, Home, Profile } from "./components";
 
 export default function Router() {
   const { auth } = ReadContext();
+
+  // Warning Before Reload
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      return "";
+    };
+  }, []);
 
   return (
     <Routes>
