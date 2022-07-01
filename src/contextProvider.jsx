@@ -8,15 +8,19 @@ export default function ContextProvider() {
   const username = useRef("");
   const user = username.current;
 
+  const mail = useRef("");
+  const email = mail.current;
+
   class Update {
     constructor() {
       this.updateAuth = () => setAuth(!auth);
       this.updateUser = (data) => (username.current = data);
+      this.updateMail = (data) => (mail.current = data);
     }
   }
 
   return (
-    <Context.Provider value={{ auth, user, Update }}>
+    <Context.Provider value={{ auth, user, email, Update }}>
       <Router />
     </Context.Provider>
   );

@@ -4,11 +4,13 @@ import { UpdateContext } from "../../context";
 export default function Login() {
   const update = UpdateContext();
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     update.updateAuth();
     update.updateUser(name);
+    update.updateMail(email);
   };
 
   return (
@@ -23,6 +25,17 @@ export default function Login() {
           autoFocus
           required
         />
+        <br />
+        <br />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <br />
+        <br />
         <input type="submit" value="Login" />
       </form>
     </>

@@ -13,10 +13,12 @@ export function UpdateContext() {
 export function ReadContext() {
   const { auth } = useContext(Context);
   const { user } = useContext(Context);
+  const { email } = useContext(Context);
 
   const value = {
     auth,
     user,
+    email,
   };
 
   return value;
