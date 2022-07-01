@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ReadContext } from "../../context";
+import { ReadContext } from "../../Context/context";
 
 export default function Profile() {
   const { user } = ReadContext();

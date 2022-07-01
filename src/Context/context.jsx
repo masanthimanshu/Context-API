@@ -1,5 +1,7 @@
-import { useContext } from "react";
-import { Context } from "./createContext";
+import { createContext, useContext } from "react";
+
+// Context created here
+export const Context = createContext({});
 
 // Custom hook to update context data
 export function UpdateContext() {

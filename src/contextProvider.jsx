@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import Router from "./router";
-import { Context } from "./context/createContext";
+import { Context } from "./Context/context";
 
 export default function ContextProvider() {
   const [auth, setAuth] = useState(false);

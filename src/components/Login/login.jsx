@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { UpdateContext } from "../../context";
+import { UpdateContext } from "../../Context/context";
 
 export default function Login() {
   const update = UpdateContext();
