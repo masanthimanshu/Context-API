@@ -1,7 +1,33 @@
-import { createContext, useContext } from "react";
+import { useRef, useState, createContext, useContext } from "react";
+import Router from "../router";
 
 // Context created here
-export const Context = createContext({});
+const Context = createContext({});
+
+// Context provider created below
+export function ContextProvider() {
+  const [auth, setAuth] = useState(false);
+
+  const username = useRef("");
+  const user = username.current;
+
+  const mail = useRef("");
+  const email = mail.current;
+
+  class Update {
+    constructor() {
+      this.updateAuth = () => setAuth(!auth);
+      this.updateUser = (data) => (username.current = data);
+      this.updateMail = (data) => (mail.current = data);
+    }
+  }
+
+  return (
+    <Context.Provider value={{ auth, user, email, Update }}>
+      <Router />
+    </Context.Provider>
+  );
+}
 
 // Custom hook to update context data
 export function UpdateContext() {
