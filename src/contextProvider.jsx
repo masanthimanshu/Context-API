@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Router from "./router";
 import { Context } from "./context/createContext";
 
 export default function ContextProvider() {
   const [auth, setAuth] = useState(false);
-  const [user, setUser] = useState("");
 
-  function Update() {
-    this.updateAuth = () => setAuth(!auth);
-    this.updateUser = (data) => setUser(data);
+  const username = useRef("");
+  const user = username.current;
+
+  class Update {
+    constructor() {
+      this.updateAuth = () => setAuth(!auth);
+      this.updateUser = (data) => (username.current = data);
+    }
   }
-
-  console.log("Login state is : ", auth);
 
   return (
     <Context.Provider value={{ auth, user, Update }}>
