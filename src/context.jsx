@@ -1,5 +1,5 @@
-import { useRef, useState, createContext, useContext } from "react";
-import Router from "../router";
+import { useRef, useState, createContext, useContext, useEffect } from "react";
+import Router from "./router";
 
 // Context created here
 const Context = createContext({});
@@ -21,6 +21,12 @@ export function ContextProvider() {
       this.updateMail = (data) => (mail.current = data);
     }
   }
+
+  useEffect(() => {
+    window.onbeforeunload = () => {
+      return "";
+    };
+  }, []);
 
   return (
     <Context.Provider value={{ auth, user, email, Update }}>

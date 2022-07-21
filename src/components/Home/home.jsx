@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { UpdateContext, ReadContext } from "../../Context/context";
+import { UpdateContext, ReadContext } from "../../context";
 
 export default function Home() {
   const Update = UpdateContext();

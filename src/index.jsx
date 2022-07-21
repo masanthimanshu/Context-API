@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { ContextProvider } from "./Context/context";
+import { ContextProvider } from "./context";
 
 const root = createRoot(document.getElementById("root"));
 
